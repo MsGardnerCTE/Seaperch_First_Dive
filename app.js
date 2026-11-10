@@ -27,7 +27,7 @@ const parts = [
  ['ties','Cable ties','Secure components and organize cables.']
 ];
 function show(view) {
- ['parts','lab','play','teacher'].forEach(id => $(id).hidden = id !== view);
+ ['parts','lab','play'].forEach(id => $(id).hidden = id !== view);
  document.querySelectorAll('nav [data-view]').forEach(b => { b.classList.toggle('active',b.dataset.view===view); b.setAttribute('aria-pressed',String(b.dataset.view===view)); });
 }
 document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => show(b.dataset.view));
@@ -105,5 +105,5 @@ function answer(i,b){
 $('next').onclick=()=>{const previous=tasks[index].level;index++;solved=false;complete=index===tasks.length;render();if(!complete&&previous===0&&tasks[index].level===1){openLab();$('buoyTab').focus();}else if(complete)$('replay').focus();else $('question').focus();};
 $('help').onclick=()=>tasks[index].level===1?openLab():show('parts');$('start').onclick=()=>show('play');
 function reset(){index=0;solved=false;complete=false;flotation=0;clearTimeout(floatTimer);$('floatBot').style.transition='none';$('floatBot').style.top='85px';$('floatStatus').textContent='Start near the target. Change the flotation, then release and observe.';$('stop').click();lesson('buoy');render();show('parts');}
-$('reset').onclick=reset;
+
 reset();

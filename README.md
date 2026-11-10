@@ -44,7 +44,7 @@ Reference: [RoboNation SeaPerch Build Manual (2021)](https://robonation.org/app/
 
 ## Editing
 
-- `index.html`: guides, teacher notes, and page structure.
+- `index.html`: student guides and page structure.
 - `styles.css`: appearance and responsive layout.
 - `app.js`: illustrations, questions, explanations, lab controls, and challenge behavior.
 - `.nojekyll`: tells GitHub Pages to serve the static files without Jekyll processing.
@@ -56,3 +56,5 @@ Each `add(...)` call in `app.js` defines a question: level (zero-based), illustr
 The app collects no student names or results, makes no analytics requests, and stores no browser progress. Refreshing resets the session. Hosting providers may maintain ordinary access logs. Controls support keyboards; feedback is announced through live regions; the layout adapts to phones; animations respect reduced-motion preferences.
 
 This is an independent classroom activity, not an official RoboNation product. No official logos, photographs, or manual images are included.
+
+The published student interface does not include a Teacher guide tab or teacher-only section. Teaching notes remain in this README for the person managing the repository.
